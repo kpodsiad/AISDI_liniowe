@@ -59,14 +59,14 @@ private:
 
 	void move(LinkedList &other)
 	{
-		Node *tempSentinel = sentinel;
+		clearData();
+		delete sentinel;
 
 		size = other.size;
 		sentinel = other.sentinel; //taking other sentinel and giving him our
-									//when someone use moved list it will work and doesn`t throw segmentation fault
 
 		other.size = 0;
-		other.sentinel = tempSentinel;
+		other.sentinel = nullptr;
 	}
 
 public:
